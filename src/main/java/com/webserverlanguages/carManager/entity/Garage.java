@@ -22,7 +22,7 @@ public class Garage {
 
     private String location;
 
-    private LocalDateTime city;
+    private String city;
 
     private Integer capacity;
 
