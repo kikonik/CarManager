@@ -1,15 +1,9 @@
 package com.webserverlanguages.carManager.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "support_management_request")
 public class SupportManagementRequest {
@@ -30,6 +24,56 @@ public class SupportManagementRequest {
 
     private LocalDateTime scheduleDate;
 
+    public SupportManagementRequest() {
+    }
+
+    public SupportManagementRequest(Long requestId, Car carId, Garage garageId, String serviceType, LocalDateTime scheduleDate) {
+        this.requestId = requestId;
+        this.carId = carId;
+        this.garageId = garageId;
+        this.serviceType = serviceType;
+        this.scheduleDate = scheduleDate;
+    }
+
+    public Long getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(Long requestId) {
+        this.requestId = requestId;
+    }
+
+    public Car getCarId() {
+        return carId;
+    }
+
+    public void setCarId(Car carId) {
+        this.carId = carId;
+    }
+
+    public Garage getGarageId() {
+        return garageId;
+    }
+
+    public void setGarageId(Garage garageId) {
+        this.garageId = garageId;
+    }
+
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
+    }
+
+    public LocalDateTime getScheduleDate() {
+        return scheduleDate;
+    }
+
+    public void setScheduleDate(LocalDateTime scheduleDate) {
+        this.scheduleDate = scheduleDate;
+    }
 }
 
 
