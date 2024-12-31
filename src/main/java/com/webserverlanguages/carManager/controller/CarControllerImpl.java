@@ -13,9 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-//@RequestMapping("/cars")
-
-@CrossOrigin(origins = "http://localhost:3000", methods = { RequestMethod.POST})
+@CrossOrigin(origins = "http://localhost:3000", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class CarControllerImpl implements CarController {
 
     @Autowired
