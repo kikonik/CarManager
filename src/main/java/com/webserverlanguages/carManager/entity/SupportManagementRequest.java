@@ -18,7 +18,7 @@ public class SupportManagementRequest {
 
     @OneToOne
     @JoinColumn(name = "garage_id")
-    private Garage garageId;
+    private Garage garage;
 
     private String serviceType;
 
@@ -27,10 +27,10 @@ public class SupportManagementRequest {
     public SupportManagementRequest() {
     }
 
-    public SupportManagementRequest(Long requestId, Car carId, Garage garageId, String serviceType, LocalDateTime scheduleDate) {
+    public SupportManagementRequest(Long requestId, Car carId, Garage garage, String serviceType, LocalDateTime scheduleDate) {
         this.requestId = requestId;
         this.carId = carId;
-        this.garageId = garageId;
+        this.garage = garage;
         this.serviceType = serviceType;
         this.scheduleDate = scheduleDate;
     }
@@ -51,12 +51,12 @@ public class SupportManagementRequest {
         this.carId = carId;
     }
 
-    public Garage getGarageId() {
-        return garageId;
+    public Garage getGarage() {
+        return garage;
     }
 
-    public void setGarageId(Garage garageId) {
-        this.garageId = garageId;
+    public void setGarage(Garage garage) {
+        this.garage = garage;
     }
 
     public String getServiceType() {

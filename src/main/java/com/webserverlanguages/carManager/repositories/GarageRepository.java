@@ -11,8 +11,6 @@ import java.util.List;
 @Repository
 public interface GarageRepository extends JpaRepository<Garage, Integer> {
 
-    // Find garages by city
-    @Query("SELECT g FROM Garage g WHERE g.city = :city")
-    List<Garage> findByCity(@Param("city") String city);
+    List<Garage> findByCity(String city);
 
 }

@@ -14,15 +14,15 @@ public class CreateRequestDTO {
 
     private Long requestId;
 
-    private ResponseCarDTO carId;
+    private Long carId;
 
-    private ResponseGarageDTO garageId;
+    private Long garageId;
 
     private String serviceType;
 
     private LocalDateTime scheduleDate;
 
-    public CreateRequestDTO(Long requestId, ResponseCarDTO carId, ResponseGarageDTO garageId, String serviceType, LocalDateTime scheduleDate) {
+    public CreateRequestDTO(Long requestId, Long carId, Long garageId, String serviceType, LocalDateTime scheduleDate) {
         this.requestId = requestId;
         this.carId = carId;
         this.garageId = garageId;
@@ -41,19 +41,19 @@ public class CreateRequestDTO {
         this.requestId = requestId;
     }
 
-    public ResponseCarDTO getCarId() {
+    public Long getCarId() {
         return carId;
     }
 
-    public void setCarId(ResponseCarDTO carId) {
+    public void setCarId(Long carId) {
         this.carId = carId;
     }
 
-    public ResponseGarageDTO getGarageId() {
+    public Long getGarageId() {
         return garageId;
     }
 
-    public void setGarageId(ResponseGarageDTO garageId) {
+    public void setGarageId(Long garageId) {
         this.garageId = garageId;
     }
 

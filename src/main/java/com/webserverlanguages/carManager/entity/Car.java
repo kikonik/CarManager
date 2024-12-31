@@ -22,7 +22,7 @@ public class Car {
     private String licensePlate;
 
     @OneToMany(mappedBy = "garageId")
-    private List<Garage> garageId;
+    private List<Garage> garage;
 
     public Car(Long carId, String make, String model, LocalDate productionYear, String licensePlate, List<Garage> garageId) {
         this.carId = carId;
@@ -30,7 +30,7 @@ public class Car {
         this.model = model;
         this.productionYear = productionYear;
         this.licensePlate = licensePlate;
-        this.garageId = garageId;
+        this.garage = garageId;
     }
 
     public Car() {
@@ -76,12 +76,12 @@ public class Car {
         this.licensePlate = licensePlate;
     }
 
-    public List<Garage> getGarageId() {
-        return garageId;
+    public List<Garage> getGarage() {
+        return garage;
     }
 
-    public void setGarageId(List<Garage> garageId) {
-        this.garageId = garageId;
+    public void setGarage(List<Garage> garage) {
+        this.garage = garage;
     }
 }
 

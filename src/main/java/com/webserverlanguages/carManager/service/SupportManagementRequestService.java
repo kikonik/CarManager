@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface SupportManagementRequestService {
 
-    CreateRequestDTO createRequest(CreateRequestDTO dto);
+    ResponseRequestDTO createRequest(CreateRequestDTO dto);
 
     ResponseRequestDTO updateRequest(Long requestId, UpdateRequestDTO dto);
 

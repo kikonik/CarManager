@@ -8,26 +8,23 @@ import java.time.LocalDateTime;
 
 public class ResponseRequestDTO {
 
-    private Long requestId;
+  //  private Long requestId;
 
-    private Car carId;
+    private Long carId;
 
-    private Car carMake;
+//    private String carMake;
 
-    private Garage garageId;
+    private Long garageId;
 
-    private Garage garageName;
+//    private String garageName;
 
     private String serviceType;
 
     private LocalDateTime scheduleDate;
 
-    public ResponseRequestDTO(Long requestId, Car carId, Car carMake, Garage garageId, Garage garageName, String serviceType, LocalDateTime scheduleDate) {
-        this.requestId = requestId;
+    public ResponseRequestDTO(Long carId, Long garageId, String serviceType, LocalDateTime scheduleDate) {
         this.carId = carId;
-        this.carMake = carMake;
         this.garageId = garageId;
-        this.garageName = garageName;
         this.serviceType = serviceType;
         this.scheduleDate = scheduleDate;
     }
@@ -35,45 +32,24 @@ public class ResponseRequestDTO {
     public ResponseRequestDTO() {
     }
 
-    public Long getRequestId() {
-        return requestId;
-    }
 
-    public void setRequestId(Long requestId) {
-        this.requestId = requestId;
-    }
-
-    public Car getCarId() {
+    public Long getCarId() {
         return carId;
     }
 
-    public void setCarId(Car carId) {
+    public void setCarId(Long carId) {
         this.carId = carId;
     }
 
-    public Car getCarMake() {
-        return carMake;
-    }
-
-    public void setCarMake(Car carMake) {
-        this.carMake = carMake;
-    }
-
-    public Garage getGarageId() {
+    public Long getGarageId() {
         return garageId;
     }
 
-    public void setGarageId(Garage garageId) {
+    public void setGarageId(Long garageId) {
         this.garageId = garageId;
     }
 
-    public Garage getGarageName() {
-        return garageName;
-    }
 
-    public void setGarageName(Garage garageName) {
-        this.garageName = garageName;
-    }
 
     public String getServiceType() {
         return serviceType;

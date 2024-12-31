@@ -4,6 +4,7 @@ import com.webserverlanguages.carManager.dtos.carDTOs.CreateCarDTO;
 import com.webserverlanguages.carManager.dtos.carDTOs.ResponseCarDTO;
 import com.webserverlanguages.carManager.dtos.carDTOs.UpdateCarDTO;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface CarService {
@@ -16,7 +17,7 @@ public interface CarService {
 
     ResponseCarDTO getCarById(Long carId);
 
-    List<ResponseCarDTO> getAllCars(String make, Long garageId, int startYear, int endYear);
+    List<ResponseCarDTO> getAllCars(String make, Long garageId, LocalDate startYear, LocalDate endYear);
 
 
 }

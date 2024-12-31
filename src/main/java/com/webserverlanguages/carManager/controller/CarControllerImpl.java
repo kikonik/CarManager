@@ -5,11 +5,11 @@ import com.webserverlanguages.carManager.dtos.carDTOs.ResponseCarDTO;
 import com.webserverlanguages.carManager.dtos.carDTOs.UpdateCarDTO;
 import com.webserverlanguages.carManager.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -30,22 +30,35 @@ public class CarControllerImpl implements CarController {
 
 
     @Override
-    public ResponseCarDTO updateCar(Long carId, UpdateCarDTO dto) {
-        return null;
+    @RequestMapping (value = "/cars/{id}", method = RequestMethod.PUT,consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<ResponseCarDTO> updateCar(@PathVariable Long id, UpdateCarDTO dto) {
+        ResponseCarDTO updatedCar = carService.updateCar(id, dto);
+        return ResponseEntity.ok(updatedCar);
     }
 
     @Override
-    public void deleteCar(Long carId) {
-
+    @RequestMapping (value = "/cars/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Boolean> deleteCar(@PathVariable Long id) {
+        carService.deleteCar(id);
+        return ResponseEntity.ok(true);
     }
 
     @Override
-    public ResponseCarDTO getCarById(Long carId) {
-        return null;
+    @RequestMapping (value = "/cars/{id}", method = RequestMethod.GET)
+    public ResponseEntity<ResponseCarDTO> getCarById(@PathVariable Long id) {
+        ResponseCarDTO car = carService.getCarById(id);
+        return ResponseEntity.ok(car);
     }
 
     @Override
-    public List<ResponseCarDTO> getAllCars(String make, Long garageId, int startYear, int endYear) {
-        return List.of();
+    @RequestMapping (value = "/cars", method = RequestMethod.GET)
+    public ResponseEntity<List<ResponseCarDTO>> getAllCars(
+            @RequestParam(required = false) String make,
+            @RequestParam(required = false) Long garageId,
+            @RequestParam(required = false) LocalDate startYear,
+            @RequestParam(required = false) LocalDate endYear) {
+
+        List<ResponseCarDTO> cars = carService.getAllCars(make, garageId, startYear, endYear);
+        return ResponseEntity.ok(cars);
     }
 }

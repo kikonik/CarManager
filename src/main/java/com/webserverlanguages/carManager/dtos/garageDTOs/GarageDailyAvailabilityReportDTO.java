@@ -1,18 +1,19 @@
 package com.webserverlanguages.carManager.dtos.garageDTOs;
 
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class GarageDailyAvailabilityReportDTO {
 
-    private LocalDateTime city;
+    private LocalDate date;
 
     private Integer capacity;
 
     private int requestsCount;
 
-    public GarageDailyAvailabilityReportDTO(LocalDateTime city, Integer capacity, int requestsCount) {
-        this.city = city;
+    public GarageDailyAvailabilityReportDTO(LocalDate date, Integer capacity, int requestsCount) {
+        this.date = date;
         this.capacity = capacity;
         this.requestsCount = requestsCount;
     }
@@ -20,12 +21,12 @@ public class GarageDailyAvailabilityReportDTO {
     public GarageDailyAvailabilityReportDTO() {
     }
 
-    public LocalDateTime getCity() {
-        return city;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setCity(LocalDateTime city) {
-        this.city = city;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public Integer getCapacity() {

@@ -20,16 +20,10 @@ public class ResponseCarDTO {
     private List<Garage> garageId;
 
 
-    public ResponseCarDTO(Long carId, String make, String model, LocalDate productionYear, String licensePlate, List<Garage> garageId) {
-        this.carId = carId;
-        this.make = make;
-        this.model = model;
-        this.productionYear = productionYear;
-        this.licensePlate = licensePlate;
-        this.garageId = garageId;
+    public ResponseCarDTO() {
     }
 
-    public ResponseCarDTO() {
+    public ResponseCarDTO(List<Garage> garageId, String make, Long carId, String model, LocalDate productionYear, String licensePlate) {
     }
 
     public Long getCarId() {

@@ -12,15 +12,11 @@ import java.util.List;
 @Repository
 public interface CarRepository extends JpaRepository<Car, Integer> {
 
+    List<Car> findByMakeAndProductionYearBetween(String make,LocalDate startYear,LocalDate endYear);
+
     // Find cars by make
     List<Car> findByMake(String make);
-
-    // Find cars by garage
-    @Query("SELECT c FROM Car c JOIN c.garageId g WHERE g.garageId = :garageId")
-    List<Car> findByGarageId(@Param("garageId") Long garageId);
-
-    // Find cars within a production year range
-    @Query("SELECT c FROM Car c WHERE c.productionYear BETWEEN :startYear AND :endYear")
-    List<Car> findByProductionYearBetween(@Param("startYear") LocalDate startYear, @Param("endYear") LocalDate endYear);
+@Query("SELECT c FROM Car c JOIN c.garage g WHERE c.make = :make AND g.garageId = :garageId AND c.productionYear BETWEEN :startYear AND :endYear")
+    List<Car> findByMakeAndGarageIdAndProductionYearBetween(String make,Long garageId,LocalDate startYear,LocalDate endYear);
 
 }

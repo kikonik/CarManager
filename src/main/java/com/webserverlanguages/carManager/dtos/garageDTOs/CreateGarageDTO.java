@@ -11,11 +11,11 @@ public class CreateGarageDTO {
 
     private String location;
 
-    private LocalDateTime city;
+    private String city;
 
     private Integer capacity;
 
-    public CreateGarageDTO(Long garageId, String name, String location, LocalDateTime city, Integer capacity) {
+    public CreateGarageDTO(Long garageId, String name, String location, String city, Integer capacity) {
         this.garageId = garageId;
         this.name = name;
         this.location = location;
@@ -50,11 +50,11 @@ public class CreateGarageDTO {
         this.location = location;
     }
 
-    public LocalDateTime getCity() {
+    public String getCity() {
         return city;
     }
 
-    public void setCity(LocalDateTime city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
